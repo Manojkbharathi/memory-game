@@ -40,8 +40,9 @@ function flipCard() {
 
     if (!flippedCards.includes(this)) {
       flippedCards.push(this);
+      this.classList.add('flip');
       this.classList.remove('card-back');
-      this.innerHTML = `<div class ='front' <i class='fab fa-${icon}'></i></div>`;
+      this.innerHTML = `<div class ='front'> <i class='fab fa-${icon}'></i></div>`;
 
       if (flippedCards.length === 2) {
         setTimeout(matchCard, 800);
@@ -59,9 +60,11 @@ function matchCard() {
   } else {
     cardOne.innerHTML = '';
     cardOne.classList.add('card-back');
+    cardOne.classList.add('active');
 
     cardTwo.innerHTML = '';
     cardTwo.classList.add('card-back');
+    cardTwo.classList.add('active');
   }
 
   flippedCards = [];
