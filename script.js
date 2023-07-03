@@ -26,22 +26,25 @@ function displayCards() {
   icons.forEach((curr, index) => {
     let card = document.createElement('div');
     card.setAttribute('id', index);
-    card.classList.add('card-back');
-    card.classList.add('active');
+    card.innerHTML = `<div class ='card-back'>Click</div>`;
+    card.classList.add('card');
     gameBoard.appendChild(card);
-    card.addEventListener('click', flipCard);
+
+    card.addEventListener('click', function () {
+      flipCard.call(this);
+    });
   });
 }
 
 function flipCard() {
-  if (flippedCards.length < 2 && this.classList.contains('active')) {
+  if (flippedCards.length < 2 && !this.classList.contains('active')) {
     let cardId = this.getAttribute('id');
     let icon = icons[cardId];
 
     if (!flippedCards.includes(this)) {
       flippedCards.push(this);
-      this.classList.add('flip');
       this.classList.remove('card-back');
+      this.classList.add('active');
       this.innerHTML = `<div class ='front'> <i class='fab fa-${icon}'></i></div>`;
 
       if (flippedCards.length === 2) {
@@ -58,13 +61,13 @@ function matchCard() {
     cardOne.classList.add('front');
     cardTwo.classList.add('front');
   } else {
-    cardOne.innerHTML = '';
-    cardOne.classList.add('card-back');
-    cardOne.classList.add('active');
+    cardOne.innerHTML = `<div class ='card-back'>Click</div>`;
+    cardOne.classList.add('card');
+    cardOne.classList.remove('active');
 
-    cardTwo.innerHTML = '';
-    cardTwo.classList.add('card-back');
-    cardTwo.classList.add('active');
+    cardTwo.innerHTML = `<div class ='card-back'>Click</div>`;
+    cardTwo.classList.add('card');
+    cardTwo.classList.remove('active');
   }
 
   flippedCards = [];
