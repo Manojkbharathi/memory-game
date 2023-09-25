@@ -6,7 +6,7 @@
 
 body {
   text-align: center;
-  background-color: aquamarine;
+  background-color: rgb(255, 255, 255);
 }
 h1 {
   margin: 2rem;
@@ -30,7 +30,7 @@ h1 {
 }
 
 .card {
-  background-color: rgb(237, 52, 117);
+  background-color: rgb(18, 127, 170);
   background-position: 10px 0;
   background-size: 10px, 10px 0, 0 0, 0 0;
   transition: transform 0.5s;
@@ -45,7 +45,7 @@ h1 {
   align-items: center;
   justify-content: center;
   font-size: 2.8rem;
-  background: #33a8ba;
+  background: #97d3dc;
   transform: translateX(0%) rotateY(-180deg);
 }
 .card-back {

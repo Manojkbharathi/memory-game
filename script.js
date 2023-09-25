@@ -11,7 +11,7 @@ let icons = [
 
 let flippedCards = [];
 icons.push(...icons);
-
+// It randomly rearranges the elements in the array, effectively shuffling the cards for each new game.
 function shuffleCards() {
   for (let i = icons.length - 1; i >= 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
@@ -75,4 +75,3 @@ function matchCard() {
 
 shuffleCards();
 displayCards();
-console.log(icons);
